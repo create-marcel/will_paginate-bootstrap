@@ -28,7 +28,7 @@ module BootstrapPagination
       link_options = @options[:link_options] || {}
 
       if page == current_page
-        tag("li", tag("span", page), class: "active")
+        tag("li", link(page, "#", link_options), class: "active")
       else
         tag("li", link(page, page, link_options.merge(rel: rel_value(page))))
       end
